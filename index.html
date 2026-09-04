@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Girl's Expense Tracker by Nooryy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Decorations -->
+    <div class="floating teddy teddy-1">🧸</div>
+    <div class="floating teddy teddy-2">🧸</div>
+    <div class="floating doll doll-1">🎀</div>
+    <div class="floating doll doll-2">🧸</div>
+    <div class="floating sparkle sparkle-1">✦</div>
+    <div class="floating sparkle sparkle-2">✧</div>
+    <div class="floating sparkle sparkle-3">♡</div>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-badge">
+                ✨ My Little Money Diary ✨
+            </div>
+
+            <h1>
+                Girl's
+                <span>Expense Tracker</span>
+            </h1>
+
+            <p>
+                Track your spending, save your money & stay organized 💗
+            </p>
+
+            <div class="made-by">
+                made with love ♡ by <strong>Nooryy</strong>
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats-grid">
+
+            <div class="stat-card blue">
+                <div class="stat-icon">💸</div>
+
+                <div>
+                    <p>Total Spent</p>
+                    <h2 id="totalSpent">Rs 0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card pink">
+                <div class="stat-icon">🧾</div>
+
+                <div>
+                    <p>Expenses</p>
+                    <h2 id="expenseCount">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card purple">
+                <div class="stat-icon">💗</div>
+
+                <div>
+                    <p>Average</p>
+                    <h2 id="averageSpent">Rs 0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card yellow">
+                <div class="stat-icon">👑</div>
+
+                <div>
+                    <p>Biggest</p>
+                    <h2 id="biggestExpense">Rs 0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ADD EXPENSE -->
+        <section class="card add-expense">
+
+            <div class="section-title">
+
+                <div class="title-icon">🎀</div>
+
+                <div>
+                    <h2>Add an Expense</h2>
+                    <p>Tell me where your money went ✨</p>
+                </div>
+
+            </div>
+
+
+            <form id="expenseForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>What did you buy? 🛍️</label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="e.g. New dress"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Amount 💰</label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="e.g. 2500"
+                            min="1"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Category 🌸</label>
+
+                        <select id="category" required>
+
+                            <option value="">Choose category</option>
+
+                            <option value="Food">🍕 Food</option>
+
+                            <option value="Shopping">🛍️ Shopping</option>
+
+                            <option value="Transport">🚗 Transport</option>
+
+                            <option value="Education">📚 Education</option>
+
+                            <option value="Beauty">💄 Beauty</option>
+
+                            <option value="Entertainment">🎬 Entertainment</option>
+
+                            <option value="Bills">🧾 Bills</option>
+
+                            <option value="Other">✨ Other</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Date 📅</label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="input-group full-width">
+
+                    <label>Little note 💌</label>
+
+                    <textarea
+                        id="note"
+                        rows="3"
+                        placeholder="Write something about this expense..."
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="add-btn">
+                    <span>♡</span>
+                    Add Expense
+                    <span>♡</span>
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+        <section class="card">
+
+            <div class="section-title">
+
+                <div class="title-icon">📊</div>
+
+                <div>
+                    <h2>Expense Summary</h2>
+                    <p>Where does your money go? 👀</p>
+                </div>
+
+            </div>
+
+
+            <div id="categorySummary" class="category-summary">
+
+                <div class="empty-summary">
+                    Add some expenses to see your spending summary 💗
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT EXPENSES -->
+        <section class="card">
+
+            <div class="section-header">
+
+                <div class="section-title no-margin">
+
+                    <div class="title-icon">🧸</div>
+
+                    <div>
+                        <h2>Recent Expenses</h2>
+                        <p>Your little spending diary ✨</p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="clearAllBtn"
+                    class="clear-btn"
+                    type="button"
+                >
+                    🗑️ Clear All
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+            <div class="filters">
+
+                <select id="filterCategory">
+
+                    <option value="All">All Categories</option>
+
+                    <option value="Food">🍕 Food</option>
+
+                    <option value="Shopping">🛍️ Shopping</option>
+
+                    <option value="Transport">🚗 Transport</option>
+
+                    <option value="Education">📚 Education</option>
+
+                    <option value="Beauty">💄 Beauty</option>
+
+                    <option value="Entertainment">🎬 Entertainment</option>
+
+                    <option value="Bills">🧾 Bills</option>
+
+                    <option value="Other">✨ Other</option>
+
+                </select>
+
+
+                <select id="sortExpenses">
+
+                    <option value="newest">Newest First</option>
+
+                    <option value="oldest">Oldest First</option>
+
+                    <option value="highest">Highest Amount</option>
+
+                    <option value="lowest">Lowest Amount</option>
+
+                </select>
+
+            </div>
+
+
+            <div id="expenseList" class="expense-list">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">🧸</div>
+
+                    <h3>No expenses yet!</h3>
+
+                    <p>Your spending diary is waiting for its first entry 💕</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-teddy">
+                🧸
+            </div>
+
+            <p>
+                Made with 💗, cute vibes & a little bit of JavaScript
+            </p>
+
+            <span>
+                Girl's Expense Tracker • by Nooryy ✨
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <div id="toast" class="toast">
+        Expense added successfully! 💗
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
